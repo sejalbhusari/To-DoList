@@ -1,0 +1,15 @@
+function addTask() {
+    const taskName = document.getElementById('task-name').value;
+    const deadline = document.getElementById('deadline').value;
+    const priority = document.getElementById('priority').value;
+
+    if (taskName && deadline && priority) {
+        const taskList = document.getElementById('task-list');
+        const taskItem = document.createElement('div');
+        taskItem.className = 'task';
+        taskItem.innerHTML = `<span class="task-name">${taskName}</span> - Deadline: <span class="deadline">${deadline}</span> - Priority: ${priority}`;
+        taskList.appendChild(taskItem);
+    } else {
+        alert('Please fill out all fields.');
+    }
+}
